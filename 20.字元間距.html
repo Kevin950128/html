@@ -1,18 +1,29 @@
-<!DOCTYPE html>
+<!DOCTYPE html><--文件類型宣告（Document Type Declaration-->
 
 <html lang="en">
     <head>
         <meta charset="utf-8" />
         <title></title>
         <style>
-            #ls1 {letter-spacing: 1.5em}
-            #ls2 {letter-spacing: -5px}
+            #ls1 {letter-spacing: 1.5em} <--letter-spacing: 1.5em
+                - 1.5em 表示字間距為「1.5 倍的元素字型尺寸」。
+                - em 是相對單位，會依元素目前的 font-size 而變化。
+                - 正值會在字母之間加入額外空間，使字更疏。-->
+            #ls2 {letter-spacing: -5px} <--letter-spacing: -5px
+                - 使用絕對單位 px，負值會使字元靠得更近，甚至可能重疊。
+                - 過大的負值可能影響可讀性，需小心使用並在各種字型/解析度測試。-->
         </style>
     </head>
     <body>
         <h1>這是正常的文字間距</h1>
-        <h1 id="ls1">這是較大的文字間距</h1>
-        <h1 id="ls2">這是較小的文字間距</h1>
+        <h1 id="ls1">這是較大的文字間距</h1><!--
+          這個 <h1> 有 id="ls1"，會套用 #ls1 的 CSS 規則（letter-spacing: 1.5em）。
+          因為 1.5em 是相對單位，若 <h1> 的 font-size 很大，字距會變得非常大。
+        -->
+        <h1 id="ls2">這是較小的文字間距</h1><!--
+          這個 <h1> 有 id="ls2"，會套用 #ls2 的 CSS（letter-spacing: -5px）。
+          -5px 是明確的像素值，會把字元拉得更近；注意可能造成字母重疊或閱讀困難。
+        -->
 
     </body>
 </html>
