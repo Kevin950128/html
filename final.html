@@ -1,60 +1,247 @@
+<!DOCTYPE html>
 <html>
-
 <head>
-    <title>Div</title>
+    <title>Red Bull</title>
+    <meta charset="utf-8">
+
+    <link href="https://cdn.bootcss.com/flexslider/2.6.3/flexslider.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/flexslider/2.6.3/jquery.flexslider-min.js"></script>        
+
+    <script>
+        $(window).load(function() {
+            $('.flexslider').flexslider({
+                animation: "slide", 
+                rtl: true
+            });
+        });
+    </script>
+
     <style>
-        body {
-            margin: 0px;
+        *{
+            margin:0;
+            color:gray;
+            text-align:center;
         }
 
-        #b1 {
-            background-color: lightgray;
-            height: 100px;
-            line-height: 100px;
+        /* top */
+        .top{
+            background-color: white;
+        }
+        .top .container{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding:10px;
+        }
+        .top .logo{
+            font-size: 35px;
+            font-weight: bold;
+        }
+        .top .logo img{
+            width: 100px;
+            vertical-align: middle;
+        }
+        .top .top-nav{
+            font-size: 25px;
+            font-weight: bold;       
+        }
+        .top .top-nav a{
+            text-decoration: none;
+            margin-left: 10px;
         }
 
-        #b1 h1 {
-            width: 400px;
-            margin: auto;
-            color: Red;
-            text-align: center;
+        /* nav */
+        .nav {
+            background-color:#333;
+            display: flex;
+            justify-content: center;
         }
-
-        #b3 {
-            height: 730px;
-            background-image: url(https://d1b8dyiuti31bx.cloudfront.net/NewsPhotos/20230619/26_092209727848.jpg);
+        .nav ul {
+            list-style-type: none;
+            padding: 0;
+            background-color: #333;
         }
-
-        #b3 h2 {
+        .nav li {
+            float: left;
+        }
+        .nav li a {    
+            display: block;
             color: white;
-            padding: 50px 150px;
-            margin: 0px;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .nav li a:hover {
+            background-color: #111;
         }
 
-        #b5 {
-            height: 70px;
-            line-height: 70px;
-            background-color: gray;
+        /* slider */
+        .slider{
+            background-color: black;
         }
 
-        #b5 h4 {
-            color: white;
-            text-align: center;
-            margin: 0px;
+        /* banner */
+        .banner{
+            background-image: linear-gradient(#001F3F,#C8102E);
+            padding:40px;
+            color:white;
+        }
+        .banner h1{
+            padding: 15px;
+            color:white;
+        }
+
+        /* members */
+        .faculty {
+            background-color:white;
+            padding:40px;
+        }
+        .faculty h2 {
+            font-size: 26px;
+            color: rgb(50,51,52);
+            padding-bottom:40px;
+        }
+        .faculty .container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+        .faculty .teacher{
+            width: 220px;
+            padding: 20px;
+        }
+        .faculty .teacher img{
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .faculty .teacher h3{
+            margin-top: 15px;
+            color: #333;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* info */
+        .contact {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0;
+        }
+        .contact .container{
+            width: 70%;
+        }
+        .contact h2{
+            font-size: 26px;
+            color: #333;
+        }
+        .contact .infos{
+            margin-top: 30px;
+            text-align: left;
+        }
+        .contact .infos b{
+            display:block;
+            margin-top: 15px;
+            font-size: 18px;
+            color: #333;
+        }
+        .contact .infos span{
+            display:block;
+            margin-top: 5px;
+            color: #555;
+        }
+
+        /* footer */
+        .footer{
+            background-color: rgb(25,26,30);
+            padding: 30px 0;
+            color:white;
         }
     </style>
 </head>
 
 <body>
-    <div id='b1'>
-        <h1>F1</h1>
-    </div>
-    <div id="b3">
-        <h2>加入F1 成為賽車手</h2>
-    </div>
-    <div id="b5">
-        <h4>Red Bull Content Pool</h4>
-    </div>
-</body>
 
+<div class="top">
+    <div class="container">
+        <div class="logo">
+            <img src="https://images.seeklogo.com/logo-png/40/1/red-bull-racing-f1-logo-png_seeklogo-406796.png" alt="紅牛車隊標誌">
+            Oracle Red Bull Racing
+        </div>
+        <div class="top-nav">
+            <a href="#">首頁</a>
+            <a href="#">車隊</a>
+            <a href="#">登入</a>
+        </div>
+    </div>
+</div>
+
+<div class="nav">   
+    <ul>
+        <li><a href="#introduction">車隊簡介</a></li>
+        <li><a href="#faculty">車手介紹</a></li>
+        <li><a href="#about">車隊資料</a></li>
+    </ul>
+</div>
+
+<div class="slider">
+    <div class="flexslider" style="direction:rtl">
+        <ul class="slides">
+            <li><img src="https://www.yukitsunoda.com/sys/wp-content/uploads/2025/12/SI202511300336-768x512.jpg"></li>
+            <li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/2025_Japan_GP_-_Red_Bull_-_Max_Verstappen_-_Race.jpg/250px-2025_Japan_GP_-_Red_Bull_-_Max_Verstappen_-_Race.jpg"></li>
+            <li><img src="https://img.redbull.com/images/c_fill,g_auto,w_800,h_602/q_auto,f_auto/redbullcom/2025/11/12/a4jdpgeyaxwryonx7ymb/grand-prix-of-brazil"></li>
+        </ul>
+    </div>
+</div>
+
+<div class="banner" id="introduction">
+    <h1>Oracle 紅牛車隊</h1>
+    <h1>FIA 世界一級方程式錦標賽車隊</h1>
+    <h1>多次獲得車隊及車手冠軍</h1>
+    <h1>以創新、速度與性能為驅動力</h1>
+</div>
+
+<div class="faculty" id="faculty">
+    <h2>車手介紹</h2>
+    <div class="container">
+        <div class="teacher">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/2024-08-25_Motorsport%2C_Formel_1%2C_Gro%C3%9Fer_Preis_der_Niederlande_2024_STP_3973_by_Stepro_%28medium_crop%29.jpg/250px-2024-08-25_Motorsport%2C_Formel_1%2C_Gro%C3%9Fer_Preis_der_Niederlande_2024_STP_3973_by_Stepro_%28medium_crop%29.jpg" alt="Max Verstappen">
+            <h3>馬克斯·維斯塔潘</h3>
+        </div>
+        <div class="teacher">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/2021_US_GP%2C_Tsunoda.jpg/250px-2021_US_GP%2C_Tsunoda.jpg" alt="Yuki Tsunoda">
+            <h3>角田裕毅</h3>
+        </div>
+    </div>
+</div>
+
+<div class="contact" id="about">
+    <div class="container">
+        <h2>車隊資料</h2>
+        <div class="infos">
+            <b>車隊名稱</b>
+            <span>Oracle 紅牛車隊</span>
+
+            <b>總部</b>
+            <span>英國 米爾頓凱恩斯</span>
+
+            <b>成立年份</b>
+            <span>2005 年</span>
+
+            <b>冠軍紀錄</b>
+            <span>多次 FIA 世界一級方程式車手及車隊冠軍</span>
+
+            <b>動力單元</b>
+            <span>Red Bull Powertrains</span>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    &copy; 2025 Oracle 紅牛車隊. 版權所有
+</div>
+
+</body>
 </html>
