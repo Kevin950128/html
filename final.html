@@ -22,6 +22,7 @@
             margin:0;
             color:gray;
             text-align:center;
+            box-sizing: border-box;
         }
 
         /* top */
@@ -56,24 +57,55 @@
             background-color:#333;
             display: flex;
             justify-content: center;
+            position: relative;
+            z-index: 1000;
         }
         .nav ul {
             list-style-type: none;
             padding: 0;
+            margin: 0;
             background-color: #333;
         }
-        .nav li {
+        .nav > ul > li {
             float: left;
+            position: relative; /* 讓下拉選單相對於此定位 */
         }
         .nav li a {    
             display: block;
             color: white;
-            padding: 14px 16px;
+            padding: 14px 20px;
             text-decoration: none;
         }
         .nav li a:hover {
             background-color: #111;
         }
+
+        /* --- 下拉選單核心 CSS --- */
+        .dropdown-content {
+            display: none; /* 平時隱藏 */
+            position: absolute;
+            background-color: #444;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            top: 100%; /* 從導覽列底部開始 */
+            left: 0;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left; /* 選單文字靠左較美觀 */
+        }
+        .dropdown-content a:hover {
+            background-color: #C8102E; /* 換成紅牛紅 */
+        }
+        /* 滑鼠移入 li 時顯示 dropdown-content */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        /* ----------------------- */
 
         /* slider */
         .slider{
@@ -181,7 +213,13 @@
 <div class="nav">   
     <ul>
         <li><a href="#introduction">車隊簡介</a></li>
-        <li><a href="#faculty">車手介紹</a></li>
+        <li class="dropdown">
+            <a href="#faculty">車手介紹</a>
+            <div class="dropdown-content">
+                <a href="#driver1">馬克斯·維斯塔潘</a>
+                <a href="#driver2">角田裕毅</a>
+            </div>
+        </li>
         <li><a href="#about">車隊資料</a></li>
     </ul>
 </div>
@@ -189,9 +227,9 @@
 <div class="slider">
   <div class="flexslider" style="direction:rtl">
     <ul class="slides">
-      <li><img src="https://i.imgur.com/你的第一張.jpg" alt="Red Bull F1 動態照"></li>
-      <li><img src="https://i.imgur.com/你的第二張.jpg" alt="Red Bull F1 賽車"></li>
-      <li><img src="https://i.imgur.com/你的第三張.jpg" alt="F1 在賽道上"></li>
+      <li><img src="https://via.placeholder.com/1200x400/001F3F/FFFFFF?text=Slide+1" alt="Red Bull F1 動態照"></li>
+      <li><img src="https://via.placeholder.com/1200x400/C8102E/FFFFFF?text=Slide+2" alt="Red Bull F1 賽車"></li>
+      <li><img src="https://via.placeholder.com/1200x400/000000/FFFFFF?text=Slide+3" alt="F1 在賽道上"></li>
     </ul>
   </div>
 </div>
@@ -206,11 +244,11 @@
 <div class="faculty" id="faculty">
     <h2>車手介紹</h2>
     <div class="container">
-        <div class="teacher">
+        <div class="teacher" id="driver1">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/2024-08-25_Motorsport%2C_Formel_1%2C_Gro%C3%9Fer_Preis_der_Niederlande_2024_STP_3973_by_Stepro_%28medium_crop%29.jpg/250px-2024-08-25_Motorsport%2C_Formel_1%2C_Gro%C3%9Fer_Preis_der_Niederlande_2024_STP_3973_by_Stepro_%28medium_crop%29.jpg" alt="Max Verstappen">
             <h3>馬克斯·維斯塔潘</h3>
         </div>
-        <div class="teacher">
+        <div class="teacher" id="driver2">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/2021_US_GP%2C_Tsunoda.jpg/250px-2021_US_GP%2C_Tsunoda.jpg" alt="Yuki Tsunoda">
             <h3>角田裕毅</h3>
         </div>
