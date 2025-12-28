@@ -1,205 +1,237 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hant">
 <head>
-    <title>Red Bull</title>
     <meta charset="utf-8">
+    <title>Oracle Red Bull Racing</title>
 
+    <!-- FlexSlider -->
     <link href="https://cdn.bootcss.com/flexslider/2.6.3/flexslider.min.css" rel="stylesheet">
     <script src="https://cdn.bootcss.com/jquery/2.2.2/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/flexslider/2.6.3/jquery.flexslider-min.js"></script>        
+    <script src="https://cdn.bootcss.com/flexslider/2.6.3/jquery.flexslider-min.js"></script>
 
     <script>
-        $(window).load(function() {
-            $('.flexslider').flexslider({
-                animation: "slide", 
-                rtl: true
-            });
+    $(window).load(function () {
+        $('.flexslider').flexslider({
+            animation: "slide",
+            slideshow: true,
+            slideshowSpeed: 3000,
+            animationSpeed: 600,
+            pauseOnHover: true,
+            directionNav: true,
+            controlNav: true,
+            rtl: true
         });
+    });
     </script>
 
     <style>
         *{
             margin:0;
-            color:gray;
-            text-align:center;
-            box-sizing: border-box;
+            box-sizing:border-box;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
-       
+        /* ===== Top ===== */
         .top{
-            background-color: white;
+            background:white;
         }
         .top .container{
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding:10px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:10px 20px;
         }
-        .top .logo{
-            font-size: 35px;
-            font-weight: bold;
+        .logo{
+            font-size:28px;
+            font-weight:bold;
         }
-        .top .logo img{
-            width: 100px;
-            vertical-align: middle;
+        .logo img{
+            width:90px;
+            vertical-align:middle;
         }
-        .top .top-nav{
-            font-size: 25px;
-            font-weight: bold;       
-        }
-        .top .top-nav a{
-            text-decoration: none;
-            margin-left: 10px;
+        .top-nav a{
+            text-decoration:none;
+            margin-left:15px;
+            font-size:18px;
+            color:#333;
         }
 
-        
-        .nav {
-            background-color:#333;
-            display: flex;
-            justify-content: center;
-            position: relative;
-            z-index: 1000;
+        /* ===== Nav ===== */
+        .nav{
+            background:#333;
+            display:flex;
+            justify-content:center;
         }
-        .nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            background-color: #333;
+        .nav ul{
+            list-style:none;
+            display:flex;
+            padding:0;
+            margin:0;
         }
-        .nav > ul > li {
-            float: left;
-            position: relative;
+        .nav li{
+            position:relative;
         }
-        .nav li a {    
-            display: block;
-            color: white;
-            padding: 14px 20px;
-            text-decoration: none;
+        .nav a{
+            display:block;
+            padding:14px 24px;
+            color:white;
+            text-decoration:none;
+            font-weight:bold;
         }
-        .nav li a:hover {
-            background-color: #111;
+        .nav a:hover{
+            background:#111;
         }
 
-       
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #444;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            top: 100%;
-            left: 0;
+        /* 下拉選單 */
+        .dropdown-content{
+            display:none;
+            position:absolute;
+            top:100%;
+            left:0;
+            background:#333;
+            min-width:200px;
+            text-align:center;
+            z-index:999;
         }
-        .dropdown-content a {
-            color: white;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
+        .dropdown-content a{
+            padding:14px 0;
         }
-        .dropdown-content a:hover {
-            background-color: #C8102E;
+        .dropdown-content a:hover{
+            background:#C8102E;
         }
-        
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        
-
-        
-        .slider{
-            background-color: black;
+        .dropdown:hover .dropdown-content{
+            display:block;
         }
 
-        
+        /* ===== Slider ===== */
+        .hero-slider{
+            margin:0;
+            border:none;
+        }
+        .hero-slider li{
+            position:relative;
+        }
+        .hero-slider img{
+            width:100%;
+            height:80vh;
+            object-fit:cover;
+        }
+
+        .slide-caption{
+            position:absolute;
+            bottom:20%;
+            left:10%;
+            background:rgba(0,0,0,0.45);
+            padding:20px 30px;
+            border-radius:8px;
+            color:white;
+        }
+        .slide-caption h2{
+            font-size:36px;
+            color:white;
+        }
+        .slide-caption p{
+            font-size:20px;
+            margin-top:10px;
+            color:#ddd;
+        }
+
+        /* arrows & dots */
+        .flex-direction-nav a:before{
+            font-size:40px;
+            color:white;
+        }
+        .flex-control-paging li a{
+            background:rgba(255,255,255,0.5);
+        }
+        .flex-control-paging li a.flex-active{
+            background:#C8102E;
+        }
+
+        /* ===== Banner ===== */
         .banner{
-            background-image: linear-gradient(#001F3F,#C8102E);
+            background:linear-gradient(#001F3F,#C8102E);
+            text-align:center;
             padding:40px;
             color:white;
         }
         .banner h1{
-            padding: 15px;
-            color:white;
+            margin:10px 0;
         }
 
-       
-        .faculty {
-            background-color:white;
+        /* ===== Drivers ===== */
+        .faculty{
             padding:40px;
+            text-align:center;
         }
-        .faculty h2 {
-            font-size: 26px;
-            color: rgb(50,51,52);
-            padding-bottom:40px;
+        .faculty h2{
+            margin-bottom:30px;
         }
-        .faculty .container {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
+        .faculty .container{
+            display:flex;
+            justify-content:center;
+            gap:40px;
         }
-        .faculty .teacher{
-            width: 220px;
-            padding: 20px;
-        }
-        .faculty .teacher img{
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 50%;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-        .faculty .teacher h3{
-            margin-top: 15px;
-            color: #333;
-            font-size: 18px;
-            font-weight: bold;
+        .teacher img{
+            width:200px;
+            height:200px;
+            border-radius:50%;
+            object-fit:cover;
+            box-shadow:0 4px 10px rgba(0,0,0,.3);
         }
 
-        /* info */
-        .contact {
-            display: flex;
-            justify-content: center;
-            margin: 40px 0;
+        /* ===== Info ===== */
+        .contact{
+            display:flex;
+            justify-content:center;
+            padding:40px 0;
         }
         .contact .container{
-            width: 70%;
+            width:70%;
         }
-        .contact h2{
-            font-size: 26px;
-            color: #333;
-        }
-        .contact .infos{
-            margin-top: 30px;
-            text-align: left;
-        }
-        .contact .infos b{
+        .infos b{
             display:block;
-            margin-top: 15px;
-            font-size: 18px;
-            color: #333;
-        }
-        .contact .infos span{
-            display:block;
-            margin-top: 5px;
-            color: #555;
+            margin-top:15px;
         }
 
-        /* footer */
+        /* ===== Footer ===== */
         .footer{
-            background-color: rgb(25,26,30);
-            padding: 30px 0;
+            background:#191A1E;
             color:white;
+            text-align:center;
+            padding:25px 0;
+        }
+
+        /* ===== Mobile ===== */
+        @media(max-width:768px){
+            .hero-slider img{
+                height:60vh;
+            }
+            .slide-caption{
+                left:5%;
+                right:5%;
+                text-align:center;
+            }
+            .slide-caption h2{
+                font-size:24px;
+            }
+            .slide-caption p{
+                font-size:16px;
+            }
+            .faculty .container{
+                flex-direction:column;
+            }
         }
     </style>
 </head>
 
 <body>
 
+<!-- Top -->
 <div class="top">
     <div class="container">
         <div class="logo">
-            <img src="https://images.seeklogo.com/logo-png/40/1/red-bull-racing-f1-logo-png_seeklogo-406796.png" alt="紅牛車隊標誌">
+            <img src="https://images.seeklogo.com/logo-png/40/1/red-bull-racing-f1-logo-png_seeklogo-406796.png">
             Oracle Red Bull Racing
         </div>
         <div class="top-nav">
@@ -210,75 +242,76 @@
     </div>
 </div>
 
-<div class="nav">   
+<!-- Nav（已加下拉選單） -->
+<div class="nav">
     <ul>
-        <li><a href="#introduction">車隊簡介</a></li>
+        <li><a href="#">首頁</a></li>
+        <li><a href="#intro">車隊簡介</a></li>
+
         <li class="dropdown">
-            <a href="#faculty">車手介紹</a>
+            <a href="#drivers">成員簡介</a>
             <div class="dropdown-content">
-                <a href="#driver1">馬克斯·維斯塔潘</a>
-                <a href="#driver2">角田裕毅</a>
+                <a href="#max">馬克斯·維斯塔潘</a>
+                <a href="#yuki">角田裕毅</a>
             </div>
         </li>
-        <li><a href="#about">車隊資料</a></li>
+
+        <li><a href="#info">相關資訊</a></li>
     </ul>
 </div>
 
-<div class="slider">
-  <div class="flexslider" style="direction:rtl">
+<!-- Slider -->
+<div class="flexslider hero-slider">
     <ul class="slides">
-      <li><img src="https://via.placeholder.com/1200x400/001F3F/FFFFFF?text=Slide+1" alt="Red Bull F1 動態照"></li>
-      <li><img src="https://via.placeholder.com/1200x400/C8102E/FFFFFF?text=Slide+2" alt="Red Bull F1 賽車"></li>
-      <li><img src="https://via.placeholder.com/1200x400/000000/FFFFFF?text=Slide+3" alt="F1 在賽道上"></li>
+        <li>
+            <img src="https://cdn.pixabay.com/photo/2023/07/22/09/28/red-bull-8143008_640.jpg">
+        </li>
+        <li>
+            <img src="https://images.pexels.com/photos/35210800/pexels-photo-35210800.jpeg">
+        </li>
+        <li>
+            <img src="https://www.carstuff.com.tw/media/k2/items/cache/c47416829040058b61e05328b569b421_XL.jpg">
+        </li>
     </ul>
-  </div>
 </div>
 
-<div class="banner" id="introduction">
+<!-- Banner -->
+<div class="banner" id="intro">
     <h1>Oracle 紅牛車隊</h1>
-    <h1>FIA 世界一級方程式錦標賽車隊</h1>
-    <h1>多次獲得車隊及車手冠軍</h1>
-    <h1>以創新、速度與性能為驅動力</h1>
+    <h1>FIA 世界一級方程式</h1>
 </div>
 
-<div class="faculty" id="faculty">
+<!-- Drivers -->
+<div class="faculty" id="drivers">
     <h2>車手介紹</h2>
     <div class="container">
-        <div class="teacher" id="driver1">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/2024-08-25_Motorsport%2C_Formel_1%2C_Gro%C3%9Fer_Preis_der_Niederlande_2024_STP_3973_by_Stepro_%28medium_crop%29.jpg/250px-2024-08-25_Motorsport%2C_Formel_1%2C_Gro%C3%9Fer_Preis_der_Niederlande_2024_STP_3973_by_Stepro_%28medium_crop%29.jpg" alt="Max Verstappen">
+        <div class="teacher" id="max">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/2024-08-25_Motorsport%2C_Formel_1%2C_Gro%C3%9Fer_Preis_der_Niederlande_2024_STP_3973_by_Stepro_%28medium_crop%29.jpg/250px-2024-08-25_Motorsport%2C_Formel_1%2C_Gro%C3%9Fer_Preis_der_Niederlande_2024_STP_3973_by_Stepro_%28medium_crop%29.jpg">
             <h3>馬克斯·維斯塔潘</h3>
         </div>
-        <div class="teacher" id="driver2">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/2021_US_GP%2C_Tsunoda.jpg/250px-2021_US_GP%2C_Tsunoda.jpg" alt="Yuki Tsunoda">
+        <div class="teacher" id="yuki">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/2021_US_GP%2C_Tsunoda.jpg/250px-2021_US_GP%2C_Tsunoda.jpg">
             <h3>角田裕毅</h3>
         </div>
     </div>
 </div>
 
-<div class="contact" id="about">
+<!-- Info -->
+<div class="contact" id="info">
     <div class="container">
         <h2>車隊資料</h2>
         <div class="infos">
-            <b>車隊名稱</b>
-            <span>Oracle 紅牛車隊</span>
-
-            <b>總部</b>
-            <span>英國 米爾頓凱恩斯</span>
-
-            <b>成立年份</b>
-            <span>2005 年</span>
-
-            <b>冠軍紀錄</b>
-            <span>多次 FIA 世界一級方程式車手及車隊冠軍</span>
-
-            <b>動力單元</b>
-            <span>Red Bull Powertrains</span>
+            <b>車隊名稱</b> Oracle Red Bull Racing
+            <b>總部</b> 英國 米爾頓凱恩斯
+            <b>成立</b> 2005 年
+            <b>動力單元</b> Red Bull Powertrains
         </div>
     </div>
 </div>
 
+<!-- Footer -->
 <div class="footer">
-    &copy; 2025 Oracle 紅牛車隊. 版權所有
+    © 2025 Oracle Red Bull Racing
 </div>
 
 </body>
